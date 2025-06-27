@@ -25,8 +25,8 @@ export default {
         },
       },
       fontFamily: {
-        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
-        'display': ['Poppins', 'ui-sans-serif', 'system-ui'],
+        'sans': ['Nohemi VF', 'ui-sans-serif', 'system-ui'],
+        'display': ['Nohemi VF', 'ui-sans-serif', 'system-ui'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in',

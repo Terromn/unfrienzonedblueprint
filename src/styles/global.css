@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+@font-face {
+  font-family: 'Nohemi VF';
+  src: url('/fonts/nohemi/Nohemi-VF.woff2') format('woff2-variations');
+  font-weight: 100 900; /* Define el rango de pesos disponibles en la fuente variable */
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,6 +18,10 @@
     @apply font-sans;
   }
   
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;

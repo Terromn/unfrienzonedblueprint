@@ -1,4 +1,6 @@
 ---
+import PurchaseForm from '../components/PurchaseForm.tsx';
+
 const bonuses = [
   {
     title: "30-Day Action Plan",
@@ -27,6 +29,15 @@ const bonuses = [
 ];
 
 const totalValue = 197 + 97 + 67 + 197 + 297; // $855
+
+// Placeholder for logging functions - will be properly implemented later
+const handlePurchaseSuccess = (data: { email: string; fullName: string }) => {
+  console.log('Purchase successful logged from Astro!', data);
+};
+
+const handlePurchaseError = (error: Error) => {
+  console.error('Purchase error logged from Astro!', error);
+};
 ---
 
 <section id="purchase" class="section-padding bg-gradient-to-br from-primary-600 to-secondary-500 dark:from-blue-dark dark:to-slate-900 text-white">
@@ -129,53 +140,7 @@ const totalValue = 197 + 97 + 67 + 197 + 297; // $855
     
     <!-- Purchase Form -->
     <div class="max-w-md mx-auto mt-16">
-      <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 text-gray-900 dark:text-white">
-        <div class="text-center mb-6">
-          <h3 class="text-2xl font-bold mb-2">Get Instant Access</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            Secure checkout • 60-day guarantee
-          </p>
-        </div>
-        
-        <form class="space-y-4">
-          <div>
-            <label class="block text-sm font-medium mb-2">Email Address</label>
-            <input 
-              type="email" 
-              required
-              placeholder="your@email.com"
-              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 focus:ring-2 focus:ring-primary-500 dark:focus:ring-yellow focus:border-transparent transition-all duration-200"
-            />
-          </div>
-          
-          <div>
-            <label class="block text-sm font-medium mb-2">Full Name</label>
-            <input 
-              type="text" 
-              required
-              placeholder="John Doe"
-              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 focus:ring-2 focus:ring-primary-500 dark:focus:ring-yellow focus:border-transparent transition-all duration-200"
-            />
-          </div>
-          
-          <button 
-            type="submit"
-            class="w-full btn-primary text-lg py-4 mt-6"
-          >
-            🔒 Get Instant Access - $47
-          </button>
-          
-          <div class="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
-            <div class="flex items-center justify-center mb-2">
-              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
-              </svg>
-              Secure SSL Encryption
-            </div>
-            <p>We accept all major credit cards and PayPal</p>
-          </div>
-        </form>
-      </div>
+      <PurchaseForm client:visible onPurchaseSuccess={handlePurchaseSuccess} onPurchaseError={handlePurchaseError} />
     </div>
     
     <!-- Urgency -->

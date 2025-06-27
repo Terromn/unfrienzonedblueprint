@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HeroSection from '../components/HeroSection.astro';
-import TestimonialsSection from '../components/TestimonialsSection.astro';
-import SocialProofSection from '../components/SocialProofSection.astro';
-import WhatThisIsNotSection from '../components/WhatThisIsNotSection.astro';
-import PurchaseSection from '../components/PurchaseSection.astro';
-import CommunitySection from '../components/CommunitySection.astro';
-import FAQSection from '../components/FAQSection.astro';
+import HeroSection from '../sections/HeroSection.astro';
+import TestimonialsSection from '../sections/TestimonialsSection.astro';
+import SocialProofSection from '../sections/SocialProofSection.astro';
+import WhatThisIsNotSection from '../sections/WhatThisIsNotSection.astro';
+import PurchaseSection from '../sections/PurchaseSection.astro';
+import CommunitySection from '../sections/CommunitySection.astro';
+import FAQSection from '../sections/FAQSection.astro';
 import Footer from '../components/Footer.astro';
 
 // Import global styles
@@ -43,12 +43,12 @@ import '../styles/global.css';
 </Layout>
 
 <!-- Analytics and Conversion Tracking -->
-<script>
+<script is:inline>
   // Simple scroll tracking for conversion optimization
   let sections = ['hero', 'testimonials', 'purchase', 'faq'];
-  let sectionViews: Record<string, boolean> = {};
+  let sectionViews = {};
   
-  function trackSectionView(sectionName: string) {
+  function trackSectionView(sectionName) {
     if (!sectionViews[sectionName]) {
       sectionViews[sectionName] = true;
       // Here you would send to your analytics service
@@ -60,7 +60,7 @@ import '../styles/global.css';
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-        const sectionId = entry.target.id || entry.target.querySelector('[id]')?.id;
+        const sectionId = entry.target.id || (entry.target.querySelector('[id]') ? entry.target.querySelector('[id]').id : null);
         if (sectionId && sections.includes(sectionId)) {
           trackSectionView(sectionId);
         }
@@ -89,17 +89,14 @@ import '../styles/global.css';
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        const href = link.getAttribute('href');
-        if (href) {
-          const targetId = href.slice(1);
-          const targetElement = document.getElementById(targetId);
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-          }
+        const targetId = link.getAttribute('href').slice(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
         }
       });
-      });
     });
+  });
 </script>
 
 <!-- SEO Schema Markup -->

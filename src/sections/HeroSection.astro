@@ -1,8 +1,8 @@
 ---
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from '../components/ThemeToggle.tsx';
 ---
 
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
   <!-- Background Pattern -->
   <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-blue-50 dark:from-blue-dark dark:via-slate-900 dark:to-slate-800"></div>
   <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -11,7 +11,9 @@ import ThemeToggle from './ThemeToggle';
   <ThemeToggle client:load />
   
   <!-- Content -->
-  <div class="container-custom relative z-10 text-center">
+  <div class="container-custom relative z-10 text-center flex flex-col items-center">
+    <!-- Logo -->
+    <img src="/assets/logo.png" alt="Unfriendzoned Blueprint Logo" class="w-24 h-24 object-contain mb-8" />
     <!-- Badge -->
     <div class="inline-flex items-center px-4 py-2 bg-primary-100 dark:bg-yellow/20 text-primary-700 dark:text-yellow rounded-full text-sm font-medium mb-8 animate-fade-in">
       <span class="w-2 h-2 bg-primary-500 dark:bg-yellow rounded-full mr-2 animate-bounce-soft"></span>
