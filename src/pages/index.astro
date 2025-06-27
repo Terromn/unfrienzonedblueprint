@@ -46,9 +46,9 @@ import '../styles/global.css';
 <script>
   // Simple scroll tracking for conversion optimization
   let sections = ['hero', 'testimonials', 'purchase', 'faq'];
-  let sectionViews = {};
+  let sectionViews: Record<string, boolean> = {};
   
-  function trackSectionView(sectionName) {
+  function trackSectionView(sectionName: string) {
     if (!sectionViews[sectionName]) {
       sectionViews[sectionName] = true;
       // Here you would send to your analytics service
@@ -89,14 +89,17 @@ import '../styles/global.css';
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        const targetId = link.getAttribute('href').slice(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
+        const href = link.getAttribute('href');
+        if (href) {
+          const targetId = href.slice(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
         }
       });
+      });
     });
-  });
 </script>
 
 <!-- SEO Schema Markup -->

@@ -52,6 +52,6 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-primary-600 to-secondary-500 dark:from-yellow dark:to-orange-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-600 to-secondary-500 dark:from-yellow dark:to-primary-500 bg-clip-text text-transparent;
   }
 } 
