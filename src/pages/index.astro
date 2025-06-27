@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import TestimonialsSection from '../components/TestimonialsSection.astro';
+import SocialProofSection from '../components/SocialProofSection.astro';
+import WhatThisIsNotSection from '../components/WhatThisIsNotSection.astro';
+import PurchaseSection from '../components/PurchaseSection.astro';
+import CommunitySection from '../components/CommunitySection.astro';
+import FAQSection from '../components/FAQSection.astro';
+import Footer from '../components/Footer.astro';
+
+// Import global styles
+import '../styles/global.css';
+---
+
+<Layout 
+  title="Unfriendzoned Blueprint - Never Get Friendzoned Again"
+  description="Transform your dating life with the proven blueprint that's helped 10,000+ men escape the friend zone and create irresistible attraction. Get instant access to the complete system + exclusive bonuses."
+>
+  <!-- Hero Section with main value proposition -->
+  <HeroSection />
+  
+  <!-- Social Proof and Trust Signals -->
+  <SocialProofSection />
+  
+  <!-- Real Testimonials and Results -->
+  <TestimonialsSection />
+  
+  <!-- What This Is/Isn't for Clarity -->
+  <WhatThisIsNotSection />
+  
+  <!-- Main Purchase Section -->
+  <PurchaseSection />
+  
+  <!-- Community Benefits -->
+  <CommunitySection />
+  
+  <!-- FAQ to Handle Objections -->
+  <FAQSection />
+  
+  <!-- Footer with Final CTA -->
+  <Footer />
+</Layout>
+
+<!-- Analytics and Conversion Tracking -->
+<script>
+  // Simple scroll tracking for conversion optimization
+  let sections = ['hero', 'testimonials', 'purchase', 'faq'];
+  let sectionViews = {};
+  
+  function trackSectionView(sectionName) {
+    if (!sectionViews[sectionName]) {
+      sectionViews[sectionName] = true;
+      // Here you would send to your analytics service
+      console.log(`Section viewed: ${sectionName}`);
+    }
+  }
+  
+  // Intersection Observer for section tracking
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+        const sectionId = entry.target.id || entry.target.querySelector('[id]')?.id;
+        if (sectionId && sections.includes(sectionId)) {
+          trackSectionView(sectionId);
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  // Observe sections when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+    
+    // Track form interactions
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('Form submitted - would process purchase here');
+        // Here you would integrate with your payment processor
+        alert('🎉 Thank you for your interest! In a real implementation, this would process your purchase.');
+      });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  });
+</script>
+
+<!-- SEO Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Unfriendzoned Blueprint",
+  "description": "Complete guide to escaping the friend zone and creating meaningful romantic connections",
+  "brand": {
+    "@type": "Brand",
+    "name": "Unfriendzoned Blueprint"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "47",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2024-01-01"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "10247"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Alex M."
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "I was stuck in the friend zone with my crush for 8 months. After following the Unfriendzoned Blueprint, we've been dating for 6 months now. This actually works!"
+    }
+  ]
+}
+</script> 

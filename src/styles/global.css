@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500 dark:bg-gray-500;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-4 bg-primary-600 hover:bg-primary-700 dark:bg-yellow dark:hover:bg-yellow/90 text-white dark:text-blue-dark font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-500/50 dark:focus:ring-yellow/50;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border-2 border-primary-600 dark:border-yellow text-primary-600 dark:text-yellow hover:bg-primary-600 dark:hover:bg-yellow hover:text-white dark:hover:text-blue-dark font-semibold rounded-lg transition-all duration-300;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-primary-50 to-blue-50 dark:from-blue-dark dark:to-slate-900;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-500 dark:from-yellow dark:to-orange-400 bg-clip-text text-transparent;
+  }
+} 

@@ -1,0 +1,145 @@
+---
+const testimonials = [
+  {
+    name: "Alex M.",
+    age: 28,
+    location: "San Francisco, CA",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face",
+    rating: 5,
+    text: "I was stuck in the friend zone with my crush for 8 months. After following the Unfriendzoned Blueprint, we've been dating for 6 months now. This actually works!",
+    result: "From friend zone to relationship in 3 weeks"
+  },
+  {
+    name: "Marcus T.",
+    age: 24,
+    location: "Miami, FL",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face",
+    rating: 5,
+    text: "The psychological insights in this blueprint are mind-blowing. I finally understand what I was doing wrong. My confidence has skyrocketed.",
+    result: "Went from 0 to 5 dates in one month"
+  },
+  {
+    name: "David L.",
+    age: 31,
+    location: "Austin, TX",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face",
+    rating: 5,
+    text: "After my divorce, I thought I'd lost my touch. This blueprint taught me how to create genuine attraction. I'm in the best relationship of my life now.",
+    result: "Found love again at 31"
+  },
+  {
+    name: "Jordan K.",
+    age: 26,
+    location: "Seattle, WA",
+    image: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=80&h=80&fit=crop&crop=face",
+    rating: 5,
+    text: "The 'Attraction Triggers' chapter alone was worth the entire price. I went from being ignored to having women actually initiate conversations with me.",
+    result: "Increased matches by 400% on dating apps"
+  },
+  {
+    name: "Ryan P.",
+    age: 29,
+    location: "New York, NY",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=80&h=80&fit=crop&crop=face",
+    rating: 5,
+    text: "I was always the 'nice guy' who finished last. This blueprint showed me how to be attractive while staying authentic. Game-changer!",
+    result: "Escaped the friend zone with 3 different women"
+  },
+  {
+    name: "Tyler S.",
+    age: 25,
+    location: "Denver, CO",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop&crop=face",
+    rating: 5,
+    text: "The texting strategies in here are pure gold. I used to get left on read constantly. Now my response rate is through the roof.",
+    result: "90% response rate on dating apps"
+  }
+];
+---
+
+<section id="testimonials" class="section-padding bg-white dark:bg-slate-900">
+  <div class="container-custom">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-display font-bold mb-6">
+        Real Men, Real <span class="text-gradient">Results</span>
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Join thousands of men who've already transformed their dating lives with the Unfriendzoned Blueprint
+      </p>
+    </div>
+    
+    <!-- Testimonials Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {testimonials.map((testimonial) => (
+        <div class="bg-gray-50 dark:bg-slate-800 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+          <!-- Rating -->
+          <div class="flex text-yellow-400 mb-4">
+            {Array.from({length: testimonial.rating}).map(() => (
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            ))}
+          </div>
+          
+          <!-- Testimonial Text -->
+          <blockquote class="text-gray-700 dark:text-gray-300 mb-6 italic leading-relaxed">
+            "{testimonial.text}"
+          </blockquote>
+          
+          <!-- Result Badge -->
+          <div class="bg-primary-100 dark:bg-yellow/20 text-primary-700 dark:text-yellow px-3 py-2 rounded-full text-sm font-medium mb-4 inline-block">
+            ✓ {testimonial.result}
+          </div>
+          
+          <!-- Author Info -->
+          <div class="flex items-center">
+            <img 
+              src={testimonial.image} 
+              alt={testimonial.name}
+              class="w-12 h-12 rounded-full mr-4"
+              loading="lazy"
+            />
+            <div>
+              <div class="font-semibold text-gray-900 dark:text-white">{testimonial.name}</div>
+              <div class="text-sm text-gray-500 dark:text-gray-400">
+                Age {testimonial.age} • {testimonial.location}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Stats Section -->
+    <div class="bg-gradient-to-r from-primary-600 to-secondary-500 dark:from-yellow dark:to-orange-400 rounded-2xl p-8 md:p-12 text-white dark:text-blue-dark">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl md:text-3xl font-bold mb-4">
+          The Numbers Don't Lie
+        </h3>
+        <p class="text-lg opacity-90">
+          Here's what our community has achieved
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-3xl md:text-4xl font-bold mb-2">10,247+</div>
+          <div class="text-sm md:text-base opacity-90">Success Stories</div>
+        </div>
+        <div>
+          <div class="text-3xl md:text-4xl font-bold mb-2">94%</div>
+          <div class="text-sm md:text-base opacity-90">Success Rate</div>
+        </div>
+        <div>
+          <div class="text-3xl md:text-4xl font-bold mb-2">18 Days</div>
+          <div class="text-sm md:text-base opacity-90">Average Time to Results</div>
+        </div>
+        <div>
+          <div class="text-3xl md:text-4xl font-bold mb-2">4.9/5</div>
+          <div class="text-sm md:text-base opacity-90">Customer Rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

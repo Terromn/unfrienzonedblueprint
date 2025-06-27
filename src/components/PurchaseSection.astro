@@ -1,0 +1,191 @@
+---
+const bonuses = [
+  {
+    title: "30-Day Action Plan",
+    description: "Step-by-step daily tasks to implement everything you learn",
+    value: "$97",
+    icon: "📋"
+  },
+  {
+    title: "Text Message Templates",
+    description: "100+ proven messages that get responses every time",
+    value: "$67",
+    icon: "💬"
+  },
+  {
+    title: "Confidence Masterclass",
+    description: "Video course on building unshakeable confidence",
+    value: "$197",
+    icon: "🎯"
+  },
+  {
+    title: "Private Community Access",
+    description: "Join our exclusive brotherhood of successful men",
+    value: "$297",
+    icon: "👥"
+  }
+];
+
+const totalValue = 197 + 97 + 67 + 197 + 297; // $855
+---
+
+<section id="purchase" class="section-padding bg-gradient-to-br from-primary-600 to-secondary-500 dark:from-blue-dark dark:to-slate-900 text-white">
+  <div class="container-custom">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-display font-bold mb-6">
+        Get the Complete <span class="text-yellow-300">Unfriendzoned Blueprint</span>
+      </h2>
+      <p class="text-xl opacity-90 max-w-3xl mx-auto">
+        Everything you need to transform your dating life and never get friendzoned again
+      </p>
+    </div>
+    
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <!-- Main Product -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center bg-yellow-400 text-blue-dark px-4 py-2 rounded-full text-sm font-bold mb-4">
+            📚 MAIN PRODUCT
+          </div>
+          <h3 class="text-2xl font-bold mb-4">The Unfriendzoned Blueprint</h3>
+          <p class="opacity-90 mb-6">
+            The complete 147-page guide that reveals the psychology of attraction and how to escape the friend zone forever.
+          </p>
+          
+          <!-- What's Included -->
+          <div class="text-left space-y-3 mb-8">
+            <div class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>The 7 Fatal Friend Zone Mistakes (and how to avoid them)</span>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>The Attraction Triggers that create instant chemistry</span>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>The Friend Zone Escape Protocol (step-by-step)</span>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Body language secrets that communicate confidence</span>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-400 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>The Perfect Date Formula that guarantees a second date</span>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <div class="text-3xl font-bold mb-2">Value: $197</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bonuses -->
+      <div class="space-y-6">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center bg-green-400 text-green-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
+            🎁 FREE BONUSES
+          </div>
+          <h3 class="text-xl font-bold">When you order today, you also get:</h3>
+        </div>
+        
+        {bonuses.map((bonus) => (
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div class="flex items-start">
+              <div class="text-3xl mr-4">{bonus.icon}</div>
+              <div class="flex-1">
+                <h4 class="text-lg font-bold mb-2">{bonus.title}</h4>
+                <p class="opacity-90 text-sm mb-3">{bonus.description}</p>
+                <div class="text-yellow-400 font-bold">{bonus.value} Value</div>
+              </div>
+            </div>
+          </div>
+        ))}
+        
+        <!-- Total Value -->
+        <div class="bg-yellow-400 text-blue-dark rounded-xl p-6 text-center">
+          <div class="text-sm font-semibold mb-2">TOTAL VALUE</div>
+          <div class="text-3xl font-bold line-through opacity-60">${totalValue}</div>
+          <div class="text-xs opacity-60 mb-4">If purchased separately</div>
+          
+          <div class="text-4xl font-bold mb-2">Only $47</div>
+          <div class="text-sm font-semibold">76% OFF - Limited Time</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Purchase Form -->
+    <div class="max-w-md mx-auto mt-16">
+      <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 text-gray-900 dark:text-white">
+        <div class="text-center mb-6">
+          <h3 class="text-2xl font-bold mb-2">Get Instant Access</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Secure checkout • 60-day guarantee
+          </p>
+        </div>
+        
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-2">Email Address</label>
+            <input 
+              type="email" 
+              required
+              placeholder="your@email.com"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 focus:ring-2 focus:ring-primary-500 dark:focus:ring-yellow focus:border-transparent transition-all duration-200"
+            />
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium mb-2">Full Name</label>
+            <input 
+              type="text" 
+              required
+              placeholder="John Doe"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 focus:ring-2 focus:ring-primary-500 dark:focus:ring-yellow focus:border-transparent transition-all duration-200"
+            />
+          </div>
+          
+          <button 
+            type="submit"
+            class="w-full btn-primary text-lg py-4 mt-6"
+          >
+            🔒 Get Instant Access - $47
+          </button>
+          
+          <div class="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
+            <div class="flex items-center justify-center mb-2">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+              </svg>
+              Secure SSL Encryption
+            </div>
+            <p>We accept all major credit cards and PayPal</p>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Urgency -->
+    <div class="text-center mt-12">
+      <div class="inline-flex items-center bg-red-500 text-white px-6 py-3 rounded-full">
+        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+        </svg>
+        ⚡ Special price ends in 24 hours
+      </div>
+    </div>
+  </div>
+</section> 
