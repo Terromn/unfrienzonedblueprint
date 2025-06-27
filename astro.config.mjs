@@ -13,4 +13,12 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'always',
   },
+  server: {
+    port: process.env.PORT ? parseInt(process.env.PORT) : 4321,
+    host: true
+  },
+  preview: {
+    port: process.env.PORT ? parseInt(process.env.PORT) : 4321,
+    host: true
+  }
 }); 
