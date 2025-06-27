@@ -1,7 +1,57 @@
 @font-face {
   font-family: 'Nohemi VF';
-  src: url('/fonts/nohemi/Nohemi-VF.woff2') format('woff2-variations');
+  src: url('/fonts/Nohemi-VF-BF6438cc58ad63d.ttf') format('truetype-variations');
   font-weight: 100 900; /* Define el rango de pesos disponibles en la fuente variable */
+  font-display: swap;
+}
+
+/* Fallback fonts for better compatibility */
+@font-face {
+  font-family: 'Nohemi';
+  src: url('/fonts/Nohemi-Thin-BF6438cc5896c67.ttf') format('truetype');
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  src: url('/fonts/Nohemi-ExtraLight-BF6438cc58a2634.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  src: url('/fonts/Nohemi-Light-BF6438cc5899919.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  src: url('/fonts/Nohemi-Regular-BF6438cc4d0e493.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  src: url('/fonts/Nohemi-Medium-BF6438cc5883899.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  src: url('/fonts/Nohemi-SemiBold-BF6438cc588a48a.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  src: url('/fonts/Nohemi-Bold-BF6438cc587b5b5.ttf') format('truetype');
+  font-weight: 700;
   font-display: swap;
 }
 
@@ -16,6 +66,7 @@
   
   body {
     @apply font-sans;
+    font-family: 'Nohemi VF', 'Nohemi', ui-sans-serif, system-ui;
   }
   
   h1, h2, h3, h4, h5, h6 {
