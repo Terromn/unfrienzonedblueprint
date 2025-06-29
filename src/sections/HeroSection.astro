@@ -1,95 +1,224 @@
 ---
-import ThemeToggle from '../components/ThemeToggle.tsx';
+import AnimatedBackground from "../components/AnimatedBackground.tsx";
 ---
 
-<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-  <!-- Background Pattern -->
-  <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-blue-50 dark:from-blue-dark dark:via-slate-900 dark:to-slate-800"></div>
-  <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
-  
-  <!-- Theme Toggle -->
-  <ThemeToggle client:load />
-  
-  <!-- Content -->
-  <div class="container-custom relative z-10 text-center flex flex-col items-center">
+<section
+  class="relative h-screen w-screen flex items-center justify-center overflow-hidden bg-transparent"
+>
+  <!-- Animated Background with Blobs -->
+  <AnimatedBackground client:load />
+
+
+  <!-- Main Content - Centered -->
+  <div class="relative z-10 max-w-4xl mx-auto px-8 text-center">
     <!-- Logo -->
-    <img src="/assets/logo.png" alt="Unfriendzoned Blueprint Logo" class="w-24 h-24 object-contain mb-8" />
-    <!-- Badge -->
-    <div class="inline-flex items-center px-4 py-2 bg-primary-100 dark:bg-yellow/20 text-primary-700 dark:text-yellow rounded-full text-sm font-medium mb-8 animate-fade-in">
-      <span class="w-2 h-2 bg-primary-500 dark:bg-yellow rounded-full mr-2 animate-bounce-soft"></span>
-      Limited Time: Transform Your Dating Life Today
+    <div class="hero-logo mb-8">
+      <img
+        src="/assets/imagetype.png"
+      alt="Unfriendzoned Blueprint Logo"
+        class="w-48 h-auto md:w-64 lg:w-80 xl:w-96 mx-auto object-contain"
+      />
     </div>
-    
+
     <!-- Main Headline -->
-    <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 animate-slide-up">
-      Never Get
-      <span class="text-gradient block">Friendzoned</span>
-      Again
+    <h1
+      class="hero-headline text-6xl md:text-7xl lg:text-8xl font-display font-bold mb-6 leading-tight flex flex-col items-center"
+    >
+      <span class="text-gradient whitespace-nowrap"
+        >Escape the Friend Zone</span
+      >
+      <span class="block"
+        >in <span class="text-gradient">7 Steps</span></span
+      >
     </h1>
-    
-    <!-- Subheadline -->
-    <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up" style="animation-delay: 0.2s;">
-      Discover the proven blueprint that's helped over <strong class="text-primary-600 dark:text-yellow">10,000+ men</strong> 
-      transform from "just friends" to irresistible partners in 30 days or less.
+
+    <!-- Sub Headline -->
+    <p
+      class="hero-subheadline text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed font-lora"
+    >
+      Discover the Step-by-Step Guide That's Helped <strong
+        class="text-primary-600 dark:text-yellow">1,000+ Good Guys</strong
+      > Finally Get the Girl
     </p>
-    
-    <!-- Social Proof Strip -->
-    <div class="flex flex-wrap justify-center items-center gap-6 mb-12 animate-slide-up" style="animation-delay: 0.4s;">
-      <div class="flex items-center">
-        <div class="flex -space-x-2">
-          <img class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-800" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="User 1">
-          <img class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-800" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face" alt="User 2">
-          <img class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-800" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" alt="User 3">
-        </div>
-        <span class="ml-3 text-sm text-gray-600 dark:text-gray-300">10,247+ success stories</span>
-      </div>
-      <div class="flex items-center">
-        <div class="flex text-yellow-400">
-          ★★★★★
-        </div>
-        <span class="ml-2 text-sm text-gray-600 dark:text-gray-300">4.9/5 rating</span>
-      </div>
-    </div>
-    
-    <!-- CTA Buttons -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-up" style="animation-delay: 0.6s;">
-      <a href="#purchase" class="btn-primary text-lg px-10 py-5">
-        Get Instant Access - $47
-        <span class="block text-sm opacity-90">Usually $197</span>
-      </a>
-      <a href="#testimonials" class="btn-secondary">
-        See Success Stories
+
+    <!-- CTA Button -->
+    <div class="hero-cta mb-8">
+      <a
+        href="#purchase"
+        class="btn-primary text-xl md:text-2xl px-12 py-6 shadow-2xl transform hover:scale-105 transition-all duration-300 inline-block"
+      >
+        🚀 Get Instant Access
       </a>
     </div>
-    
-    <!-- Guarantee Badge -->
-    <div class="inline-flex items-center text-sm text-gray-600 dark:text-gray-400 animate-slide-up" style="animation-delay: 0.8s;">
-      <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-      </svg>
-      60-Day Money-Back Guarantee
+
+    <!-- Social Proof -->
+    <div class="hero-social-proof flex items-center justify-center">
+      <div class="flex -space-x-2 mr-4">
+        <img
+          class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800"
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face"
+          alt="User 1"
+        />
+        <img
+          class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800"
+          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face"
+          alt="User 2"
+        />
+        <img
+          class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800"
+          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
+          alt="User 3"
+        />
+      </div>
+      <div class="text-left">
+        <div class="font-semibold text-gray-800 dark:text-white">
+          1,000+ Success Stories
+        </div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">
+          ⭐⭐⭐⭐⭐ 4.9/5 Average Rating
+        </div>
+      </div>
     </div>
-  </div>
-  
-  <!-- Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-    </svg>
   </div>
 </section>
 
 <style>
-  .bg-grid-pattern {
-    background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
+  @keyframes logoEntrance {
+    0% {
+      transform: scale(0.5) rotate(0deg);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.1) rotate(5deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
   }
-  
-  .dark .bg-grid-pattern {
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
-</style> 
+
+  @keyframes slideUpSub {
+    0% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+
+  .hero-logo img {
+    animation: logoEntrance 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .hero-headline span:nth-child(1) {
+    animation: slideUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .hero-headline span:nth-child(2) {
+    animation: slideUp 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+
+  .hero-subheadline {
+    animation: slideUpSub 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+
+  .hero-cta a {
+    animation: scaleIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.8s forwards;
+    opacity: 0;
+  }
+
+  .hero-social-proof {
+    animation: fadeInUp 0.6s ease-out 1.2s forwards;
+    opacity: 0;
+  }
+
+  .hero-social-proof img:nth-child(1) {
+    animation: scaleIn 0.5s ease-out 1.4s forwards;
+    opacity: 0;
+  }
+
+  .hero-social-proof img:nth-child(2) {
+    animation: scaleIn 0.5s ease-out 1.5s forwards;
+    opacity: 0;
+  }
+
+  .hero-social-proof img:nth-child(3) {
+    animation: scaleIn 0.5s ease-out 1.6s forwards;
+    opacity: 0;
+  }
+
+  /* Continuous animations */
+  .hero-logo img {
+    animation:
+      logoEntrance 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards,
+      float 4s ease-in-out 2s infinite;
+  }
+
+  .hero-cta a {
+    animation:
+      scaleIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.8s forwards,
+      pulse 2s ease-in-out 3s infinite;
+  }
+</style>

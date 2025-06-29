@@ -27,6 +27,8 @@ export default {
       fontFamily: {
         'sans': ['Nohemi VF', 'Nohemi', 'ui-sans-serif', 'system-ui'],
         'display': ['Nohemi VF', 'Nohemi', 'ui-sans-serif', 'system-ui'],
+        'serif': ['Lora', 'Georgia', 'serif'],
+        'lora': ['Lora', 'Georgia', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in',

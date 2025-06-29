@@ -60,6 +60,11 @@
 @tailwind utilities;
 
 @layer base {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
   html {
     scroll-behavior: smooth;
   }
@@ -67,10 +72,21 @@
   body {
     @apply font-sans;
     font-family: 'Nohemi VF', 'Nohemi', ui-sans-serif, system-ui;
+    font-weight: 300; /* Light weight */
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
+  }
+  
+  /* Optional: Use Lora for specific elements */
+  .font-lora {
+    font-family: 'Lora', Georgia, serif;
+  }
+  
+  /* You can also make Lora the default serif font */
+  .serif {
+    font-family: 'Lora', Georgia, serif;
   }
 
   /* Custom scrollbar */
